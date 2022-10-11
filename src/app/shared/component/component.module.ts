@@ -4,6 +4,7 @@ import { CardComponent } from './card/card.component';
 import { ButtonComponent } from './button/button.component';
 import { TableComponent } from './table/table.component';
 import { TextinputComponent } from './textinput/textinput.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -15,7 +16,8 @@ import { TextinputComponent } from './textinput/textinput.component';
     TextinputComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
     CardComponent,
