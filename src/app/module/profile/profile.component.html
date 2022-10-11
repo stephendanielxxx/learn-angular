@@ -1,11 +1,24 @@
 <p>profile works! oke</p>
 
-<my-button></my-button>
-
-<my-card></my-card>
-
-<my-table></my-table>
-
 <my-textinput [inputModel]="outputText" (outputCallback)="setToTextParent($event)"></my-textinput>
 
 {{outputText}}
+
+<table>
+    <tr>
+        <td>Name : </td>
+        <td>{{ profileService.name }}</td>
+    </tr>
+    <tr>
+        <td>Age : </td>
+        <td>{{ profileService.age }}</td>
+    </tr>
+    <tr>
+        <td>Job : </td>
+        <td>{{ profileService.job }}</td>
+    </tr>
+</table>
+
+<my-table></my-table>
+
+<button (click)="onClearProfile">Clears Profile</button>
