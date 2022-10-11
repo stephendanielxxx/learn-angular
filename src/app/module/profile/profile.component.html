@@ -6,4 +6,6 @@
 
 <my-table></my-table>
 
-<my-textinput></my-textinput>
+<my-textinput [inputModel]="outputText" (outputCallback)="setToTextParent($event)"></my-textinput>
+
+{{outputText}}

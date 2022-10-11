@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'my-textinput',
@@ -7,11 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TextinputComponent implements OnInit {
 
-  text: any
+  inputText: any
+
+  @Input() inputModel: any; // agar bisa mendapat input di component
+  @Output() outputCallback = new EventEmitter<string>(); //untuk mengirim value ke parent
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  setToText(text: any){
+    console.log(text.target.value);
+    this.inputModel = text.target.value;
+    //can process and manipulate inputModel here
+    this.outputCallback.emit(this.inputModel+" Oke!!");
+    //send text from input to parent 
+  }
 }

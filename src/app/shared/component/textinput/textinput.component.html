@@ -1,3 +1,5 @@
-<input [(ngModel)] = "text" type="text"/>
-
-<span style = "color : red">{{ text }}</span>
+<input [(ngModel)] = "inputText" type="text" (change)="setToText($event)"/>
+<!--
+    input = digunakan untuk mengambil value dari html ke component
+    change = digunakan untuk set action, value dari action akan diproses dalam function di component/    
+-->

@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
+  outputText: any
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  //this method is set to handle action on html
+  setToTextParent(output: string){
+    this.outputText = output;
+  }
 }
