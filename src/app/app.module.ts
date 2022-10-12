@@ -6,17 +6,19 @@ import { AppComponent } from './app.component';
 import { ProfileModule } from './module/profile/profile.module';
 import { PendapatanComponent } from './module/admin/report/pendapatan/pendapatan.component';
 import { PengeluaranComponent } from './module/admin/report/pengeluaran/pengeluaran.component';
+import { LoginModule } from './module/login/login.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     PendapatanComponent,
-    PengeluaranComponent
+    PengeluaranComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ProfileModule
+    ProfileModule,
+    LoginModule
   ],
   providers: [],
   bootstrap: [AppComponent]

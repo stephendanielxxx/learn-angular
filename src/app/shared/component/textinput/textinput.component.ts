@@ -21,7 +21,7 @@ export class TextinputComponent implements OnInit {
     console.log(text.target.value);
     this.inputModel = text.target.value;
     //can process and manipulate inputModel here
-    this.outputCallback.emit(this.inputModel+" Oke!!");
+    this.outputCallback.emit(this.inputModel);
     //send text from input to parent 
   }
 }

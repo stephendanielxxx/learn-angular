@@ -5,6 +5,7 @@ import { ButtonComponent } from './button/button.component';
 import { TableComponent } from './table/table.component';
 import { TextinputComponent } from './textinput/textinput.component';
 import { FormsModule } from '@angular/forms';
+import { PasswordinputComponent } from './passwordinput/passwordinput.component';
 
 
 
@@ -13,7 +14,8 @@ import { FormsModule } from '@angular/forms';
     CardComponent,
     ButtonComponent,
     TableComponent,
-    TextinputComponent
+    TextinputComponent,
+    PasswordinputComponent
   ],
   imports: [
     CommonModule,

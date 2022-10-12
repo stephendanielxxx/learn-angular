@@ -1,0 +1,15 @@
+<table>
+    <tr>
+        <td>Username : </td>
+        <td>
+            <my-textinput (outputCallback)="getUsername($event)"></my-textinput>
+        </td>
+    </tr>
+    <tr>
+        <td>Password : </td>
+        <td>
+            <my-textinput (outputCallback)="getPassword($event)"></my-textinput>
+        </td>
+    </tr>
+</table>
+<button (click)="onLogin()" >Login</button>
