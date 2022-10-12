@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from 'src/app/services/login/login.service';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ export class LoginComponent implements OnInit {
   username: string = "";
   password: string = "";
 
-  constructor() { }
+  constructor(public loginService: LoginService) { }
 
   ngOnInit(): void {
   }
@@ -24,6 +25,11 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(){
-    alert("username : "+this.username+" | password : "+this.password);
+    let loginResult = this.loginService.validateLogin(this.username, this.password);
+    if(loginResult){
+      alert("Login Sukses");
+    }else{
+      alert("Login Gagal");
+    }
   }
 }

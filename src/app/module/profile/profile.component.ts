@@ -13,13 +13,10 @@ export class ProfileComponent implements OnInit {
   age: number = 0;
   job: string = "";
 
-  constructor(public readonly profileService: ProfileService) { }
+  constructor(public profileService: ProfileService) { }
 
   ngOnInit(): void {
     this.profileService.setData("daniel", 20, "programmer");
-    this.name = this.profileService.name;
-    this.age = this.profileService.age;
-    this.job = this.profileService.job;
   }
 
   //this method is set to handle action on html
@@ -30,6 +27,5 @@ export class ProfileComponent implements OnInit {
   onClearProfile(){
     console.log("cleared");
     this.profileService.clearProfile();
-    this.ngOnInit()
   }
 }
