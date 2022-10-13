@@ -1,1 +1,51 @@
-<p>sederhana works!</p>
+<div class="center-content">
+    <form [formGroup]="formGroupSederhana">
+        <div class="form-group">
+            <div>Name : </div>
+            <div><input formControlName="name" class="input" type="text" placeholder="name"/></div>
+        </div>
+        <div class="form-group">
+            <div>Email : </div>
+            <div><input formControlName="email" class="input" type="text" placeholder="example@gmail.com"/></div>
+            <div *ngIf="formGroupSederhana.controls['email'].valid">
+                <span style="color: green;">Email sudah valid</span>
+            </div>
+            <div *ngIf="!formGroupSederhana.controls['email'].valid">
+                <span style="color: red;">Email tidak valid</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div>NickName : </div>
+            <div><input formControlName="nickname" class="input" type="text" placeholder="nickname"/></div>
+            <div *ngIf="!formGroupSederhana.controls['nickname'].valid">
+                <span style="color: red;">Nickname should be 3 characters or more</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div>Job : </div>
+            <div><input formControlName="job" class="input" type="text" placeholder="job"/></div>
+        </div>
+        <div class="form-group">
+            <div>Balance : </div>
+            <div><input formControlName="balance" class="input" type="text" placeholder="9999999"/></div>
+            <div *ngIf="!formGroupSederhana.controls['balance'].valid">
+                <span style="color: red;">Min balance is 1000000</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button class="btn-submit" (click)="checkValidation()">Submit</button>    
+        </div>
+    </form>
+</div>
+
+<div class="center-content padding-top-16">
+    <table>
+        <tr>
+            <td>Name : </td>
+            <!-- <td>{{ inputName }}</td> --> <!--need action to change value-->
+            <td>{{formGroupSederhana.controls["name"].value}}</td> <!--realtime value-->
+        </tr>
+    </table>
+</div>
+

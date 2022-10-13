@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { FormsRoutingModule } from './forms-routing.module';
 import { SederhanaComponent } from './sederhana/sederhana.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -11,6 +12,7 @@ import { SederhanaComponent } from './sederhana/sederhana.component';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     FormsRoutingModule
   ]
 })
