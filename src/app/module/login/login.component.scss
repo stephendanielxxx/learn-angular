@@ -1,0 +1,24 @@
+
+.center-content{
+    display: flex;
+    justify-content: center;
+
+    .form-group{
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    .btn-submit{
+        background: red;
+        cursor: pointer;
+    }
+
+    .input{
+        height: 30px;
+        width: 250px;
+    }
+}
+
+.padding-top-16{
+    padding-top: 16px;
+}

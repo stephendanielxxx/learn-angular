@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from 'src/app/services/login/login.service';
 
 @Component({
@@ -8,28 +9,28 @@ import { LoginService } from 'src/app/services/login/login.service';
 })
 export class LoginComponent implements OnInit {
 
-  username: string = "";
-  password: string = "";
+  formGroupLogin = new FormGroup({
+    username: new FormControl("", [Validators.required]),
+    password: new FormControl("", [Validators.required]),
+  });
 
   constructor(public loginService: LoginService) { }
 
   ngOnInit(): void {
   }
 
-  getUsername(output: string){
-    this.username = output;
-  }
-
-  getPassword(output: string){
-    this.password = output;
-  }
-
   onLogin(){
-    let loginResult = this.loginService.validateLogin(this.username, this.password);
-    if(loginResult){
-      alert("Login Sukses");
+    if(this.formGroupLogin.valid){
+      this.loginService.postLogin(this.formGroupLogin.value).subscribe(
+        (response) => {
+          alert(JSON.stringify(response));
+        },
+        (error) => {
+          alert(JSON.stringify(error));
+        }
+      );
     }else{
-      alert("Login Gagal");
+      alert("Form not valid");
     }
   }
 }

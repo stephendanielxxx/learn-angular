@@ -1,15 +1,12 @@
-<table>
-    <tr>
-        <td>Username : </td>
-        <td>
-            <my-textinput (outputCallback)="getUsername($event)"></my-textinput>
-        </td>
-    </tr>
-    <tr>
-        <td>Password : </td>
-        <td>
-            <my-textinput (outputCallback)="getPassword($event)"></my-textinput>
-        </td>
-    </tr>
-</table>
-<button (click)="onLogin()" >Login</button>
+<form [formGroup]="formGroupLogin">
+    <div class="form-group">
+        <div>Username : </div>
+        <div><input formControlName="username" class="input" type="text" placeholder="username"/></div>
+    </div>
+    <div class="form-group">
+        <div>Password : </div>
+        <div><input formControlName="password" class="input" type="password" placeholder="password"/></div>
+    </div>
+</form>
+
+<button (click)="onLogin()">Login</button>
