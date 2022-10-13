@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ObservableService } from 'src/app/services/observable/observable.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +8,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  fruits: any = [];
+
+  constructor(private readonly observableService: ObservableService) { }
 
   ngOnInit(): void {
+
+    // this.observableService.getFruits().subscribe(
+    //   (next: string) => {
+    //     this.fruits.push(next); // push value to array
+    //   },
+    //   (error) => {
+    //     this.fruits.push(error);
+    //   },
+    //   () => {
+    //     this.fruits.push("complete");
+    //   }
+    // );
+
+    this.observableService.customObservable().subscribe(
+      (next: string) => {
+        this.fruits.push(next);
+      },
+      (error) => {
+        this.fruits.push(error);
+      },
+      () => {
+        this.fruits.push("complete");
+      }
+    );
   }
 
 }
