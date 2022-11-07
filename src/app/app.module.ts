@@ -3,21 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProfileModule } from './module/profile/profile.module';
-import { PendapatanComponent } from './module/admin/report/pendapatan/pendapatan.component';
-import { PengeluaranComponent } from './module/admin/report/pengeluaran/pengeluaran.component';
-import { LoginModule } from './module/login/login.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    PendapatanComponent,
-    PengeluaranComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LoginModule
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

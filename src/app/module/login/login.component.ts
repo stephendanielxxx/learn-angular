@@ -23,9 +23,11 @@ export class LoginComponent implements OnInit {
     if(this.formGroupLogin.valid){
       this.loginService.postLogin(this.formGroupLogin.value).subscribe(
         (response) => {
+          alert("Success");
           alert(JSON.stringify(response));
         },
         (error) => {
+          alert("error");
           alert(JSON.stringify(error));
         }
       );

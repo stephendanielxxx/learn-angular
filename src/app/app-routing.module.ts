@@ -21,6 +21,10 @@ const routes: Routes = [
   {
     path: "form",
     loadChildren: () => import('../app/module/forms/forms.module').then((x) => x.FormsModule)
+  },
+  {
+    path: "home",
+    loadChildren: () => import('../app/module/home/home.module').then((x) => x.HomeModule)
   }
 ];
 

@@ -1,0 +1,47 @@
+// .margin-button{
+//     margin: 20px;
+// }
+
+// h1{
+//     color: red;
+// }
+
+// .container{
+//     p{
+//         color: red;
+//     }
+//     margin: 10px;
+//     padding: 10px;
+//     background-color: yellow;
+// }
+
+// #container-1{
+//     margin: 20px;
+//     padding: 20px;
+//     background-color: orange;
+// }
+
+$green:#26bf12;
+$teal:#12abbf;
+
+.row{
+    display: flex;
+}
+
+.box{
+    flex: 1;
+    height: 100px;
+    background-color: $green;
+}
+
+.box-2{
+    flex: 0.25;
+    height: 100px;
+    background-color: $teal;
+}
+
+.box-3{
+    flex: 0.5;
+    height: 100px;
+    background-color: violet;
+}
